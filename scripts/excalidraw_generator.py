@@ -427,6 +427,7 @@ class DiagramStyle:
     color_scheme: str = "default"   # Color scheme name
     font: str = "auto"              # Font family or "auto" for roughness-based selection
     fill_only: bool = False         # If True, boxes have fill color but no stroke outline
+    rounded_arrows: bool = True     # If True, elbowed/routed arrows use rounded corners
 
     def get_font(self) -> str:
         """Get the effective font family based on settings."""
@@ -1273,7 +1274,7 @@ class Diagram:
             "startArrowhead": None,
             "endArrowhead": "arrow",
             "elbowed": True,
-            "roundness": None,
+            "roundness": ({"type": 2} if getattr(self.style, "rounded_arrows", False) else None),
             "fixedSegments": None,
             "startIsSpecial": None,
             "endIsSpecial": None,
@@ -1391,7 +1392,7 @@ class Diagram:
             "startArrowhead": None,
             "endArrowhead": "arrow",
             "elbowed": True,
-            "roundness": None,
+            "roundness": ({"type": 2} if getattr(self.style, "rounded_arrows", False) else None),
         })
 
         if label:
@@ -2321,7 +2322,7 @@ class AutoLayoutFlowchart(Diagram):
             "startArrowhead": None,
             "endArrowhead": "arrow",
             "elbowed": True,
-            "roundness": None,
+            "roundness": ({"type": 2} if getattr(self.style, "rounded_arrows", False) else None),
         })
 
         # Add bound label if provided
@@ -2497,7 +2498,7 @@ class AutoLayoutFlowchart(Diagram):
             "startArrowhead": None,
             "endArrowhead": "arrow",
             "elbowed": True,
-            "roundness": None,
+            "roundness": ({"type": 2} if getattr(self.style, "rounded_arrows", False) else None),
             "fixedSegments": None,
             "startIsSpecial": None,
             "endIsSpecial": None,
@@ -2644,7 +2645,7 @@ class AutoLayoutFlowchart(Diagram):
             "startArrowhead": None,
             "endArrowhead": "arrow",
             "elbowed": True,
-            "roundness": None,
+            "roundness": ({"type": 2} if getattr(self.style, "rounded_arrows", False) else None),
             "fixedSegments": None,
             "startIsSpecial": None,
             "endIsSpecial": None,
