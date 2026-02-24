@@ -46,11 +46,14 @@ The intended flow is:
 
 ## Diagram types (what they’re good for)
 
+Each type below includes a **non-sensitive sample** committed under `examples/`.
+
 ### 1) Flowchart
 **Best for:** processes, decision trees, user flows, “if/then/else”, SOPs.
 
-**Use when your text sounds like:**
-- steps, branching logic, retries, approvals
+Sample topic: **Making coffee**
+
+![Flowchart sample](examples/flowchart_make_coffee.png)
 
 Implementation:
 - `AutoLayoutFlowchart` for most cases (automatic layout)
@@ -59,8 +62,9 @@ Implementation:
 ### 2) Architecture diagram
 **Best for:** systems thinking: components/services/datastores + connections.
 
-**Use when your text sounds like:**
-- frontend/backend, services, APIs, databases, queues
+Sample topic: **Newsletter system**
+
+![Architecture sample](examples/architecture_newsletter.png)
 
 Implementation:
 - `ArchitectureDiagram` or plain `Diagram` for full manual control
@@ -68,8 +72,9 @@ Implementation:
 ### 3) Sequence diagram
 **Best for:** message passing over time (request/response), protocols, API flows.
 
-**Use when your text sounds like:**
-- “client sends… server returns… auth checks…”
+Sample topic: **Password reset**
+
+![Sequence sample](examples/sequence_password_reset.png)
 
 Implementation:
 - `SequenceDiagram`
@@ -77,8 +82,9 @@ Implementation:
 ### 4) Mind map
 **Best for:** brainstorming, topic decomposition, categories/subtopics.
 
-**Use when your text sounds like:**
-- “X has branches… categories… aspects of…”
+Sample topic: **Learning Spanish**
+
+![Mind map sample](examples/mindmap_learn_spanish.png)
 
 Implementation:
 - `MindMap`
@@ -86,8 +92,9 @@ Implementation:
 ### 5) Timeline
 **Best for:** history, project roadmap, milestones.
 
-**Use when your text sounds like:**
-- dates/years, chronological evolution
+Sample topic: **Product launch plan**
+
+![Timeline sample](examples/timeline_launch_plan.png)
 
 Implementation:
 - `TimelineDiagram`
@@ -95,14 +102,19 @@ Implementation:
 ### 6) ER diagram
 **Best for:** database schemas, entities/relationships.
 
-**Use when your text sounds like:**
-- “User has many Posts… belongs to… foreign key…”
+Sample topic: **Library system**
+
+![ER sample](examples/er_library.png)
 
 Implementation:
 - `ERDiagram` *or* `Diagram` (manual layout often looks cleaner)
 
 ### 7) Simple diagram (freeform)
 **Best for:** everything else.
+
+Sample topic: **Data pipeline**
+
+![Simple sample](examples/simple_data_pipeline.png)
 
 Implementation:
 - `Diagram` base class: boxes + arrows + text
