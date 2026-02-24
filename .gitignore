@@ -12,6 +12,9 @@ node_modules/
 .DS_Store
 
 # Outputs
+# Default ignore for generated outputs, but we commit curated samples under examples/
 *.png
 *.excalidraw
+!/examples/*.png
+!/examples/*.excalidraw
 /tmp/
